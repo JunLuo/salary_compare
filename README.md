@@ -25,15 +25,31 @@ It‘s a tool that  can compare two persons' salary without tell  his salary to 
 Imagin there are two users named Alice(A) and Bob(B).
 
 * Alice generate public key and private key
+
 `salary_compare.py g [random_seed]`
+
 random_seed must large than 20
+
+
 * Alice pass public key to Bob and Bob encrpy his salary
+
 `salary_compare e [public_key] [Bob's salary]`
+
 public_key is the file Alice gived. Bob's salary is a int digist less than the value of n in `salary_compare.py line 28`
+
+
 * After ran the command above, Bob will get two number: `encrypt` and `x`. then Bob pass the encrypt to Alice and Alice decrypt
+
 `salary_compare.py d [encrypt] [Alice's salary]`
+
 Alice's salary is a int digist less than the value of n in `salary_compare.py line 28`
+
+
 * Alice will get a file named `compare` and pass the file to Bob. Bob compare with his salary
+
 `salary_compare.py c [compare] [Bob's salary] [x]`
+
 compare is the file Alice passed and `x` is the random number Bob get before
+
+
 * If Bob's salary great than Alice, the result is `You are more than that guy` else is `You are less than or equal with that guy`
